@@ -1,0 +1,79 @@
+/* Color Variables & Themes */
+:root {
+    --bg-color: #f4f7f6;
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --card-shadow: rgba(0,0,0,0.1);
+    --accent-color: #007bff;
+    --modal-bg: #fefefe;
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #f4f7f6;
+    --card-bg: #1e1e1e;
+    --card-shadow: rgba(0,0,0,0.5);
+    --accent-color: #37a1ff;
+    --modal-bg: #252525;
+}
+
+/* Base Styles */
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: var(--bg-color); 
+    color: var(--text-color); 
+    margin: 0; padding: 20px; text-align: center;
+    transition: background 0.3s, color 0.3s;
+}
+
+header { 
+    display: flex; justify-content: space-between; align-items: center; 
+    max-width: 900px; margin: 0 auto 30px auto; 
+}
+
+/* Search Section */
+.search-section { 
+    margin-bottom: 30px; background: var(--card-bg); 
+    padding: 20px; border-radius: 12px; display: inline-block; 
+    box-shadow: 0 4px 10px var(--card-shadow);
+}
+
+input { padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 200px; }
+
+/* Buttons */
+button { 
+    padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; 
+    background: var(--accent-color); color: white; font-weight: bold;
+}
+
+#theme-toggle { border-radius: 20px; }
+
+/* Grid Layouts */
+.score-grid, .player-grid { 
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; 
+}
+
+/* Cards */
+.match-card { 
+    background: var(--card-bg); border-radius: 12px; 
+    box-shadow: 0 4px 10px var(--card-shadow); 
+    padding: 15px; width: 280px; 
+    border-top: 5px solid var(--accent-color);
+}
+
+.player-card {
+    background: var(--card-bg); padding: 10px; border-radius: 8px;
+    border-left: 4px solid var(--accent-color); min-width: 150px;
+}
+
+/* Modal Styling */
+.modal { 
+    display: none; position: fixed; z-index: 1000; left: 0; top: 0; 
+    width: 100%; height: 100%; background: rgba(0,0,0,0.8); 
+}
+.modal-content { 
+    background: var(--modal-bg); margin: 15% auto; padding: 25px; 
+    border-radius: 15px; width: 85%; max-width: 450px; text-align: left; 
+    position: relative;
+}
+.close { float: right; font-size: 28px; cursor: pointer; font-weight: bold; }
